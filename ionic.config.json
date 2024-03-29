@@ -1,0 +1,7 @@
+{
+  "name": "ufal-math-with-ia",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
