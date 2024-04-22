@@ -1,0 +1,410 @@
+{
+  "version": "6.0",
+  "nxVersion": "18.2.1",
+  "deps": {
+    "@angular/animations": "^17.0.2",
+    "@angular/cdk": "^17.3.2",
+    "@angular/common": "^17.0.2",
+    "@angular/compiler": "^17.0.2",
+    "@angular/core": "^17.0.2",
+    "@angular/forms": "^17.0.2",
+    "@angular/material": "^17.3.2",
+    "@angular/platform-browser": "^17.0.2",
+    "@angular/platform-browser-dynamic": "^17.0.2",
+    "@angular/router": "^17.0.2",
+    "@capacitor-community/speech-recognition": "^5.1.0",
+    "@capacitor/app": "5.0.7",
+    "@capacitor/core": "5.7.4",
+    "@capacitor/haptics": "5.0.7",
+    "@capacitor/keyboard": "5.0.8",
+    "@capacitor/screen-reader": "^5.0.8",
+    "@capacitor/status-bar": "5.0.7",
+    "@ionic/angular": "^7.0.0",
+    "bootstrap": "^5.3.3",
+    "ionicons": "^7.0.0",
+    "rxjs": "~7.8.0",
+    "tslib": "^2.3.0",
+    "zone.js": "~0.14.2",
+    "@angular-devkit/build-angular": "^17.0.0",
+    "@angular-eslint/builder": "^17.0.0",
+    "@angular-eslint/eslint-plugin": "^17.0.0",
+    "@angular-eslint/eslint-plugin-template": "^17.0.0",
+    "@angular-eslint/schematics": "^17.0.0",
+    "@angular-eslint/template-parser": "^17.0.0",
+    "@angular/cli": "^17.0.0",
+    "@angular/compiler-cli": "^17.0.2",
+    "@angular/language-service": "^17.0.2",
+    "@capacitor/cli": "5.7.4",
+    "@ionic/angular-toolkit": "^9.0.0",
+    "@types/jasmine": "~5.1.0",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "eslint": "^7.26.0",
+    "eslint-plugin-import": "2.22.1",
+    "eslint-plugin-jsdoc": "30.7.6",
+    "eslint-plugin-prefer-arrow": "1.2.2",
+    "jasmine-core": "~5.1.0",
+    "jasmine-spec-reporter": "~5.0.0",
+    "karma": "~6.4.0",
+    "karma-chrome-launcher": "~3.2.0",
+    "karma-coverage": "~2.2.0",
+    "karma-jasmine": "~5.1.0",
+    "karma-jasmine-html-reporter": "~2.1.0",
+    "typescript": "~5.2.2"
+  },
+  "pathMappings": {},
+  "nxJsonPlugins": [],
+  "fileMap": {
+    "projectFileMap": {},
+    "nonProjectFiles": [
+      {
+        "file": ".browserslistrc",
+        "hash": "7979060078399394427"
+      },
+      {
+        "file": ".editorconfig",
+        "hash": "6686520031028425313"
+      },
+      {
+        "file": ".eslintrc.json",
+        "hash": "18210278994710539225"
+      },
+      {
+        "file": ".gitignore",
+        "hash": "91109559695469517"
+      },
+      {
+        "file": ".vscode/extensions.json",
+        "hash": "592272277800690021"
+      },
+      {
+        "file": ".vscode/settings.json",
+        "hash": "1151538777131426085"
+      },
+      {
+        "file": "angular.json",
+        "hash": "17925293836340160124"
+      },
+      {
+        "file": "capacitor.config.ts",
+        "hash": "14049814914058055851"
+      },
+      {
+        "file": "ionic.config.json",
+        "hash": "15269749034634867881"
+      },
+      {
+        "file": "karma.conf.js",
+        "hash": "13719387092471133633"
+      },
+      {
+        "file": "package-lock.json",
+        "hash": "14634400156777090157"
+      },
+      {
+        "file": "package.json",
+        "hash": "1187696681781460343"
+      },
+      {
+        "file": "src/app/Dockerfile",
+        "hash": "9196981051457683418"
+      },
+      {
+        "file": "src/app/app-routing.module.ts",
+        "hash": "3485393746207651746"
+      },
+      {
+        "file": "src/app/app.component.html",
+        "hash": "12139992690072916112"
+      },
+      {
+        "file": "src/app/app.component.scss",
+        "hash": "1400843675847970176"
+      },
+      {
+        "file": "src/app/app.component.spec.ts",
+        "hash": "16655258543879266906"
+      },
+      {
+        "file": "src/app/app.component.ts",
+        "hash": "3298285516620454244"
+      },
+      {
+        "file": "src/app/app.module.ts",
+        "hash": "2577927474838993662"
+      },
+      {
+        "file": "src/app/app.py",
+        "hash": "5229349149266815432"
+      },
+      {
+        "file": "src/app/feature/basic/basic-routing.module.ts",
+        "hash": "11292807129157006587"
+      },
+      {
+        "file": "src/app/feature/basic/basic.module.ts",
+        "hash": "10546433419612255478"
+      },
+      {
+        "file": "src/app/feature/basic/components/initial/initial.component.html",
+        "hash": "8160403680213070109"
+      },
+      {
+        "file": "src/app/feature/basic/components/initial/initial.component.scss",
+        "hash": "858285041528089001"
+      },
+      {
+        "file": "src/app/feature/basic/components/initial/initial.component.spec.ts",
+        "hash": "4238851760716886921"
+      },
+      {
+        "file": "src/app/feature/basic/components/initial/initial.component.ts",
+        "hash": "844166841316460309"
+      },
+      {
+        "file": "src/app/feature/basic/components/level-one/level-one.component.html",
+        "hash": "835208747620016969"
+      },
+      {
+        "file": "src/app/feature/basic/components/level-one/level-one.component.scss",
+        "hash": "2844109594142160800"
+      },
+      {
+        "file": "src/app/feature/basic/components/level-one/level-one.component.spec.ts",
+        "hash": "7954829924633718108"
+      },
+      {
+        "file": "src/app/feature/basic/components/level-one/level-one.component.ts",
+        "hash": "10406624561699567538"
+      },
+      {
+        "file": "src/app/feature/basic/interfaces/error.interface.ts",
+        "hash": "17413123390042764442"
+      },
+      {
+        "file": "src/app/feature/basic/interfaces/requisicao.interface.ts",
+        "hash": "9272213044051629259"
+      },
+      {
+        "file": "src/app/feature/basic/pages/home/home.page.html",
+        "hash": "17052974135052609430"
+      },
+      {
+        "file": "src/app/feature/basic/pages/home/home.page.scss",
+        "hash": "1400843675847970176"
+      },
+      {
+        "file": "src/app/feature/basic/pages/home/home.page.spec.ts",
+        "hash": "3212064809614742560"
+      },
+      {
+        "file": "src/app/feature/basic/pages/home/home.page.ts",
+        "hash": "5369898868473662489"
+      },
+      {
+        "file": "src/app/feature/basic/services/basic.service.spec.ts",
+        "hash": "14094184816879993869"
+      },
+      {
+        "file": "src/app/feature/basic/services/basic.service.ts",
+        "hash": "13333580004346470526"
+      },
+      {
+        "file": "src/app/feature/basic/services/screen-reader.service.spec.ts",
+        "hash": "17666944316977526738"
+      },
+      {
+        "file": "src/app/feature/basic/services/screen-reader.service.ts",
+        "hash": "4099271816087384528"
+      },
+      {
+        "file": "src/app/feature/shared/shared.module.ts",
+        "hash": "887458331866345173"
+      },
+      {
+        "file": "src/assets/.gitkeep",
+        "hash": "3244421341483603138"
+      },
+      {
+        "file": "src/assets/icon/favicon.png",
+        "hash": "17482944836898362639"
+      },
+      {
+        "file": "src/assets/imagens/background.jpeg",
+        "hash": "3856313699256636785"
+      },
+      {
+        "file": "src/assets/imagens/crianca1.jpeg",
+        "hash": "16000630938916267844"
+      },
+      {
+        "file": "src/assets/imagens/crianca2.jpeg",
+        "hash": "1840686528054221143"
+      },
+      {
+        "file": "src/assets/imagens/crianca3.jpeg",
+        "hash": "15700468703756552339"
+      },
+      {
+        "file": "src/assets/imagens/crianca4.jpeg",
+        "hash": "9605812436940831807"
+      },
+      {
+        "file": "src/assets/imagens/crianca5.jpeg",
+        "hash": "7275312772204517832"
+      },
+      {
+        "file": "src/assets/imagens/crianca6.jpeg",
+        "hash": "3128050854956337414"
+      },
+      {
+        "file": "src/assets/imagens/crianca7.jpeg",
+        "hash": "7695903938576955185"
+      },
+      {
+        "file": "src/assets/imagens/crianca8.png",
+        "hash": "6979579904760444735"
+      },
+      {
+        "file": "src/assets/imagens/eng.png",
+        "hash": "15589464069269440055"
+      },
+      {
+        "file": "src/assets/imagens/icon1.png",
+        "hash": "3728636639864522105"
+      },
+      {
+        "file": "src/assets/imagens/icon2.png",
+        "hash": "13159550175489157183"
+      },
+      {
+        "file": "src/assets/imagens/icon3.png",
+        "hash": "17784748622495343428"
+      },
+      {
+        "file": "src/assets/imagens/icon4.png",
+        "hash": "15370564926462419166"
+      },
+      {
+        "file": "src/assets/imagens/icon5.png",
+        "hash": "7571361077795931277"
+      },
+      {
+        "file": "src/assets/imagens/jogar.png",
+        "hash": "1554548990806612435"
+      },
+      {
+        "file": "src/assets/imagens/level1.jpeg",
+        "hash": "3822902455937961849"
+      },
+      {
+        "file": "src/assets/imagens/level1p.png",
+        "hash": "5540527414456126915"
+      },
+      {
+        "file": "src/assets/imagens/level2.jpeg",
+        "hash": "16213580336871899863"
+      },
+      {
+        "file": "src/assets/imagens/level2p.png",
+        "hash": "961480923494673491"
+      },
+      {
+        "file": "src/assets/imagens/level3.jpeg",
+        "hash": "15356771826926894596"
+      },
+      {
+        "file": "src/assets/imagens/level3p.png",
+        "hash": "2689984690434671544"
+      },
+      {
+        "file": "src/assets/imagens/level4.jpeg",
+        "hash": "5027526359310863714"
+      },
+      {
+        "file": "src/assets/imagens/level4p.png",
+        "hash": "10840350215287695890"
+      },
+      {
+        "file": "src/assets/imagens/musica1.mp3",
+        "hash": "7116416431860382386"
+      },
+      {
+        "file": "src/assets/imagens/musica2.mp3",
+        "hash": "558413440012835050"
+      },
+      {
+        "file": "src/assets/imagens/nome.png",
+        "hash": "13881510444455725072"
+      },
+      {
+        "file": "src/assets/imagens/passaro2.jpeg",
+        "hash": "16236343120902466944"
+      },
+      {
+        "file": "src/assets/imagens/passaro3.jpeg",
+        "hash": "3713046952532929733"
+      },
+      {
+        "file": "src/assets/imagens/peixe1.jpeg",
+        "hash": "4303851511966681893"
+      },
+      {
+        "file": "src/assets/imagens/pontuacao2.png",
+        "hash": "9866244414502703833"
+      },
+      {
+        "file": "src/assets/shapes.svg",
+        "hash": "4708889011185296100"
+      },
+      {
+        "file": "src/environments/environment.prod.ts",
+        "hash": "5406836414239361753"
+      },
+      {
+        "file": "src/environments/environment.ts",
+        "hash": "17458466784506237106"
+      },
+      {
+        "file": "src/global.scss",
+        "hash": "9370937482267591735"
+      },
+      {
+        "file": "src/index.html",
+        "hash": "16653220837814626122"
+      },
+      {
+        "file": "src/main.ts",
+        "hash": "3447864527603543144"
+      },
+      {
+        "file": "src/polyfills.ts",
+        "hash": "16163444994210036896"
+      },
+      {
+        "file": "src/test.ts",
+        "hash": "12412031923219697029"
+      },
+      {
+        "file": "src/theme/variables.scss",
+        "hash": "10683809365950317113"
+      },
+      {
+        "file": "src/zone-flags.ts",
+        "hash": "3323586086306676158"
+      },
+      {
+        "file": "tsconfig.app.json",
+        "hash": "9041030522571917449"
+      },
+      {
+        "file": "tsconfig.json",
+        "hash": "9300148005582941852"
+      },
+      {
+        "file": "tsconfig.spec.json",
+        "hash": "17198424518534092990"
+      }
+    ]
+  }
+}

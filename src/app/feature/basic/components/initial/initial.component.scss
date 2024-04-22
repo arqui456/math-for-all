@@ -1,0 +1,117 @@
+.grid {
+  display: grid;
+  grid-template-columns: 27% 27% 27% 27%;
+  text-align: center;
+  grid-gap: 1px;
+  padding-left: 15%;
+  margin-top: 5%;
+}
+
+.sol{
+  width: 100%;
+  height: auto;
+  border: 4px #4981CD;
+  border-style:inset;
+  border-radius: 40px;
+}
+
+.btn{
+  transition: all 0.3s ease 0s;
+}
+
+.btn:hover{
+  box-shadow: 0px 15px 20px rgba(11,101,198,1);;
+  transform: translateY(-5px);
+}
+
+.btnimg:hover{
+  box-shadow: 0px 0px 0px rgba(11,101,198,1);;
+  transform: translateY(-5px);
+}
+
+.displayimg{
+  width: 15.5vw;
+  height: auto;
+  border: 2px outset #4981CD;;
+}
+
+.row {
+  display: flex;
+}
+
+.displaydiv{
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  text-align: center;
+}
+
+.titulo{
+  margin-left: 17%;
+  text-align: center;
+  font-size: 3vw;
+  width: 70%;
+  font-family: 'DynaPuff';
+  color: #4981CD;
+  /* offset-x | offset-y | blur-radius | color */
+  text-shadow: 7px 0 #fff, -2px 0 #fff, 5px 2px #fff, 0 -2px #fff,
+  2px 2px #fff, -2px -2px #fff, 2px -2px #fff, -2px 2px #fff;
+
+}
+
+.titulopersonagem{
+  font-size: 3vw;
+  font-family: 'DynaPuff';
+  color: #4981CD;
+}
+
+.titulopersonagemdiv{
+  padding: 20px;
+  text-align: center;
+  width: 50%;
+  margin-top: 5%;
+  background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(212,211,218,1) 100%);
+  border-radius: 100em/3em;
+  margin-left: 25%;
+}
+
+.titulomusicadiv{
+  text-align: center;
+  width: 30%;
+  margin-top: 5%;
+  background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(212,211,218,1) 100%);
+  border-radius: 100em/3em;
+  margin-left: 35%;
+}
+
+.personagemescolhido{
+  padding: 10px;
+  position: fixed;
+  font-size: 2vw;
+  font-family: 'DynaPuff';
+  color: #4981CD;
+  width: 30%;
+  background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(212,211,218,1) 100%);
+  text-align: center;
+  border-radius: 50px;
+  margin-left: 64.5vw;
+  margin-top: 22.5vw;
+
+}
+.voltar{
+  position: absolute;
+  background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(212,211,218,1) 100%);
+  border-radius: 100em/3em;
+  bottom: 3%;
+  left: 3%;
+}
+
+.jogar{
+  width: 20%;
+  height: auto;
+}
+
+.eng{
+  width: 70%;
+  height: auto;
+}

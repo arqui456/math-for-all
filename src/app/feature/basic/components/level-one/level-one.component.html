@@ -1,0 +1,54 @@
+<div *ngIf="!end" class="container-fluid">
+  <div *ngIf="!resultsArrived" class="spinner-overlay"><mat-spinner></mat-spinner> </div>
+  <div *ngIf="resultsArrived">
+      <div>
+          <img   class = "sol" [src]="personagemUrl" />
+          <img style="top: 23%; width: 11%; left: 9.5%;" class = "sol" [src]="'../assets/imagens/nome.png'"><span class="nomecrianca">{{nomeCrianca}}</span>
+      </div>
+      <div *ngIf="levelatual<5">
+          <img   class = "pont" [src]="'../assets/imagens/pontuacao2.png'" /><span class="ponttext">Pontuação: {{pontuacao}}</span>
+      </div>
+      <div>
+          <div *ngIf="levelatual<5" style="text-align: center;">
+              <img class = "preview" [src]="changePreview()">
+          </div>
+          <div style="position: fixed;bottom: 0; left: 30%;" class="displaydiv">
+              <div class="questaotitle ">QUESTAO {{contador}}</div>
+              <div class="numeros" ><span>
+                {{numero1}}
+
+              </span><img class="icon" [src]="getIcons(0)"><span>  {{operatorarray[contador-1]? "+" : "-"}}  </span>
+
+              <span>
+                {{numero2}}
+              </span><img class="icon" [src]="getIcons(1)"><span style="padding-left: 6px;"> =</span>
+              <input [(ngModel)]="resposta" type="text" class="form-control"></div>
+          </div>
+          <div style="position: fixed;bottom: 5%; right: 12%;">
+            <button class="btn" (click)="calculo()"><span class="btnok">Próximo</span></button>
+
+            <button class="btn" (click)="repeat()"><span class="btnok">Repetir</span></button>
+
+          </div>
+      </div>
+  </div>
+</div>
+<div  *ngIf="end">
+  <div *ngIf="levelatual<=5">
+      <div class = "erros">
+          <span class = "telafinaltexto">Você acertou {{40 - erros.length}} questões e errou {{erros.length}} questões</span>
+      </div>
+      <div class = "revisar btn btnend" (click)="end = false; levelEmitter.emit(5); analizeResults();">
+          <span class = "telafinaltexto">Revisar erros</span>
+      </div>
+  </div>
+  <div *ngIf="levelatual == 6">
+      <div class = "erros">
+          <span class = "telafinaltexto">Obrigado por jogar!</span>
+      </div>
+  </div>
+  <div class = "revisar btn btnend" (click)="reload()">
+      <span class = "telafinaltexto">Sair</span>
+  </div>
+</div>
+

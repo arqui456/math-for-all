@@ -1,0 +1,47 @@
+<div *ngIf="!settings" style="display: flex; flex-direction: column; margin-top: 20px;">
+  <div class="titulo"*ngIf="trigger == 0">
+      Matemática - Uma Aventura Alagoana 1
+  </div>
+  <div *ngIf="trigger == 1">
+      <div class = "titulopersonagemdiv">
+          <span class = "titulopersonagem">Escolha seu personagem</span>
+      </div>
+      <div class="row">
+          <div class="grid col-md-7">
+              <div *ngFor="let image of data">
+                  <img class = "btn sol" [src]="image.url" (click)="displayUrl = image.url ; displayName = image.name">
+              </div>
+          </div>
+          <div style="padding-right: 10%; margin-top: 0%;" class="displaydiv col-md-5">
+              <img class = "displayimg" [src] = "displayUrl">
+          </div>
+          <div class="personagemescolhido">{{displayName}}</div>
+      </div>
+  </div>
+  <div class="row">
+      <div style="position: absolute;bottom: 0; left: 0;" class="col-md-2">
+          <img class = "eng btn btnimg" [src]="'../assets/imagens/eng.png'" (click)="settings = true;">
+      </div>
+      <div style="position: absolute;bottom: 0; right: 8%;" class="displaydiv col-md-10">
+          <img class = "btn btnimg jogar" [src]="'../assets/imagens/jogar.png'" (click)="checkPlay()">
+      </div>
+  </div>
+</div>
+<div *ngIf="settings">
+  <div class = "titulopersonagemdiv">
+      <span class = "titulopersonagem">Escolha sua música</span>
+  </div>
+  <div class = "titulomusicadiv btn">
+      <span class = "titulopersonagem" (click)="passCurrentSong('');">Sem música</span>
+  </div>
+  <div st class = "titulomusicadiv btn">
+      <span class = "titulopersonagem" (click)="passCurrentSong('../assets/imagens/musica1.mp3');">Música 1</span>
+  </div>
+  <div class = "titulomusicadiv btn">
+      <span class = "titulopersonagem" (click)="passCurrentSong('../assets/imagens/musica2.mp3');">Música 2</span>
+  </div>
+  <div class = "voltar btn btnimg">
+      <span class = "titulopersonagem" (click)="settings = false;">Voltar</span>
+  </div>
+</div>
+

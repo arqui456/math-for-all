@@ -1,0 +1,156 @@
+
+.row {
+  display: flex;
+}
+
+
+
+.sol{
+  width: 10%;
+  height: auto;
+  position: fixed;
+  left: 10%;
+  top: 5%;
+}
+
+.nomecrianca{
+  position: fixed;
+  left: 10.2%;
+  top: 23.5%;
+  font-family: 'DynaPuff';
+  font-size: 1vw;
+  color: #4981CD;
+}
+
+.pont{
+  width: 12%;
+  height: auto;
+  position: fixed;
+  left: 80%;
+  top: 5%;
+}
+
+.preview{
+  width: 30%;
+  height: auto;
+  margin-bottom: 10%;
+}
+
+.ponttext{
+  position: fixed;
+  left: 81%;
+  top: 20.5%;
+  font-family: 'DynaPuff';
+  font-size: 1.5vw;
+  color: #4981CD;
+}
+
+.cronometro{
+  width: 7%;
+  height: auto;
+  padding-top: 10px;
+}
+
+.questaotitle{
+  position: fixed;
+  bottom: 27%;
+  color: #fff;
+  font-family: 'DynaPuff';
+  font-size: 1.5vw;
+  right: 46%;
+  background: -webkit-linear-gradient(rgba(255,255,255,1), rgba(11,101,198,1));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.questaoimg{
+  width: 40%;
+  height: auto;
+}
+
+.displaydiv{
+  display: flex;
+  width: 40%;
+  height: 30%;
+  background-color: #0f3743;
+  border-radius: 100px;
+  margin-bottom: 1%;
+}
+
+.btn{
+  width: 150%;
+  height: 6vw;
+  background-color:  rgba(11,101,198,1);
+  border-radius: 40px;
+  transition: all 0.3s ease 0s;
+}
+
+.btnend:hover {
+  box-shadow: 0px 15px 20px rgba(11,101,198,1);
+  transform: translateY(-5px);
+}
+
+.btn:hover {
+  transform: translateY(-5px);
+}
+
+
+.btnok{
+  color: white;
+  font-size: 1.5vw;
+  font-family: 'DynaPuff';
+}
+
+.telafinaltexto{
+  font-size: 3vw;
+  font-family: 'DynaPuff';
+  color: #4981CD;
+}
+
+.erros{
+  text-align: center;
+  width: 50%;
+  margin-top: 5%;
+  background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(212,211,218,1) 100%);
+  border-radius: 100em/3em;
+  margin-left: 25%;
+}
+
+.revisar{
+  text-align: center;
+  width: 25%;
+  margin-top: 5%;
+  margin-left: 20%;
+  background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(212,211,218,1) 100%);
+  border-radius: 40px;
+  margin-left: 38%;
+}
+
+
+
+.numeros{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+  font-family: 'DynaPuff';
+  font-size: 5vw;
+   background: -webkit-linear-gradient(rgba(255,255,255,1), rgba(11,101,198,1));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.form-control{
+  margin-left: 5%;
+  -webkit-text-fill-color:  rgba(11,101,198,1);;
+  font-size: 5vw;
+  width: 20%;
+}
+
+.icon{
+  width: 13%;
+  height: auto;
+}
+
+

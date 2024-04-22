@@ -1,0 +1,12 @@
+<ion-content>
+
+<audio [src]="currentSong" autoplay loop>
+</audio>
+<div *ngIf="!isLoaded" class="spinner-overlay"><mat-spinner></mat-spinner> </div>
+<div class="body" *ngIf="isLoaded" [ngStyle]="getImage()" style="background-color: red;">
+    <div *ngIf="levelatual>=1" class = "title">Nível {{levelatual}}</div>
+    <app-initial *ngIf="levelatual == 0 ; else level" (levelEmitter)="levelatual = 1"></app-initial>
+    <ng-template #level><app-level-one (levelEmitter)="levelatual = $event"></app-level-one></ng-template>
+    </div>
+
+</ion-content>
