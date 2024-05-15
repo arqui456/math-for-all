@@ -1,16 +1,40 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, OnDestroy, OnInit, Output } from '@angular/core';
 import { Requisicao } from '../../interfaces/requisicao.interface';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { BasicService } from '../../services/basic.service';
 import { Erro } from '../../interfaces/error.interface';
 import { ScreenReaderService } from '../../services/screen-reader.service';
+import {
+  createRecognition,
+  createRecognitionSubscription,
+  createWordListObservable,
+} from '../../helpers/speech-detection.helper';
+import { repeat } from 'rxjs';
 
 @Component({
   selector: 'app-level-one',
   templateUrl: './level-one.component.html',
   styleUrls: ['./level-one.component.scss'],
 })
-export class LevelOneComponent implements OnInit {
+export class LevelOneComponent implements OnInit, OnDestroy {
+
+  static readonly REPEAT_KEYWORD = "repetir";
+  static readonly NUMBER_KEYWORD = "Resposta";
+  static readonly YES_KEYWORD = "sim";
+  static readonly NO_KEYWORD = "não";
+  static readonly CORRECT_RESPONSE_TEXT = "Certa Resposta";
+  static readonly WRONG_RESPONSE_TEXT = "Resposta Errada";
+  static readonly ASK_ARE_YOU_SURE = "Você quis dizer";
+  static readonly ASK_NUMBER_AGAIN = "Que número você quis dizer?";
+  static readonly UNKNOW_KEYWORD = "Não entendi";
+  static readonly CONGRATULATE = "Parabéns";
+  static readonly NEXT_QUESTION = "Próxima questão";
+
+  recognition = createRecognition();
+  subscription = createRecognitionSubscription(this.recognition);
+  wordList$ = createWordListObservable(this.recognition);
+
+  lastResponse?: number;
 
   numero1 = 0;
   numero2 = 0;
@@ -43,17 +67,138 @@ export class LevelOneComponent implements OnInit {
     private screenReaderService: ScreenReaderService
   ) { }
 
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
+  }
+
   ngOnInit(): void {
-    this.currentIcons = [this.icons[Math.floor(Math.random() * 4)], this.icons[Math.floor(Math.random() * 4)]];
-    [this.personagemUrl, this.nomeCrianca] = this.errorService.passPersonagem();
+
+    let wordIndex = 0;
+
+    this.recognition.start();
+
+    this.wordList$.subscribe(
+      value => this.handleStt(value[wordIndex++].transcript)
+    );
+
+    this.currentIcons = [
+      this.icons[ Math.floor(Math.random() * 4) ],
+      this.icons[ Math.floor(Math.random() * 4) ]
+    ];
+
+    [ this.personagemUrl, this.nomeCrianca ] = this.errorService.passPersonagem();
+
     this.levelEmitter.emit(this.levelatual);
+
+    [ this.numero1, this.numero2 ] = this.generateRandomNumbers(this.levelatual);
+
+    this.readerScreen(
+      this.numero1.toString(),
+      this.numero2.toString(),
+      this.operatorarray[this.contador-1] ? 'mais' : 'menos'
+    );
+  }
+
+  handleStt(text: string) {
+
+    if (text.includes(LevelOneComponent.REPEAT_KEYWORD)) {
+      this.repeat();
+      return;
+    }
+
+    if (text.includes(LevelOneComponent.NUMBER_KEYWORD)) {
+      let match = text.match(/\d/g);
+      if (match != null) {
+        console.log(match);
+        let response = parseInt(match.join(""));
+        console.log(response);
+        if(!isNaN(response)) {
+          this.speak(LevelOneComponent.ASK_ARE_YOU_SURE + response);
+          this.lastResponse = response;
+        } else {
+          this.speak(LevelOneComponent.UNKNOW_KEYWORD);
+        }
+        return;
+      }
+    }
+
+    if (text.includes(LevelOneComponent.YES_KEYWORD)) {
+
+      if(this.operatorarray[this.contador - 1]) {
+        let response = this.numero1 + this.numero2;
+        if (response == this.lastResponse) {
+          this.speak(LevelOneComponent.CORRECT_RESPONSE_TEXT);
+          this.speak(LevelOneComponent.CONGRATULATE);
+          this.nextLevel(true);
+        }
+        else {
+          this.speak(LevelOneComponent.WRONG_RESPONSE_TEXT);
+          this.nextLevel(false);
+        }
+      } 
+      else {
+        let response = this.numero1 - this.numero2;
+        if (response == this.lastResponse) {
+          this.speak(LevelOneComponent.CORRECT_RESPONSE_TEXT);
+          this.speak(LevelOneComponent.CONGRATULATE);
+          this.nextLevel(true);
+        }
+        else {
+          this.speak(LevelOneComponent.WRONG_RESPONSE_TEXT);
+          this.nextLevel(false);
+        }
+      }
+
+      return;
+    }
+
+    if (text.includes(LevelOneComponent.NO_KEYWORD)) {
+      
+      this.speak(LevelOneComponent.ASK_NUMBER_AGAIN);
+      
+      return;
+    }
+
+  }
+
+  nextLevel(scored: boolean): void {
+
+    this.speak(LevelOneComponent.NEXT_QUESTION);
+
+    if(scored) {
+      this.pontuacao++;
+    }
+
+    this.contador += 1;
+
+    if (this.contador > 10 && this.levelatual < 5) {
+      console.log("proximo level")
+      this.contador = 1;
+      this.levelatual += 1;
+      this.levelEmitter.emit(this.levelatual);
+      if (this.levelatual == 5) {
+        this.levelEmitter.emit(-1);
+        this.end = true;
+        this.resultsArrived = false;
+      }
+      else {
+        this.operatorarray = this.generateOperatorArray();
+      }
+    }
+    else if (this.contador > 5 && this.levelatual == 5) {
+      console.log("fim");
+      this.levelatual += 1;
+      this.end = true;
+      this.levelEmitter.emit(-1);
+    }
+    this.currentIcons = [this.icons[Math.floor(Math.random() * 4)], this.icons[Math.floor(Math.random() * 4)]];
     [this.numero1, this.numero2] = this.generateRandomNumbers(this.levelatual);
     this.readerScreen(this.numero1.toString(), this.numero2.toString(), this.operatorarray[this.contador-1] ? 'mais' : 'menos');
+
   }
 
   calculo(): void {
     if (this.resposta && !isNaN(+this.resposta)) {
-      //console.log('OK button clicked! Entered text: ', this.resposta);
       if (this.operatorarray[this.contador - 1]) {
         this.resultadoesperado = this.numero1 + this.numero2;
         if (this.resultadoesperado == this.resposta) {
@@ -233,11 +378,14 @@ export class LevelOneComponent implements OnInit {
     window.location.reload();
   }
 
+  public speak(text: string) {
+    this.screenReaderService.readerScreen(text);
+  }
+
   public readerScreen(n1: string, n2: string, operator: string) {
     this.screenReaderService.readerScreen(n1);
     this.screenReaderService.readerScreen(operator);
     this.screenReaderService.readerScreen(n2);
-
   }
 
   public addListener() {
