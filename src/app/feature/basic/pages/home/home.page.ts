@@ -13,13 +13,20 @@ export class HomePage implements OnInit {
   currentSong = ""
   isLoaded = false;
 
-  constructor(private errorService: BasicService) { }
+  constructor(
+    private errorService: BasicService,
+  ) {
+  }
 
   ngOnInit(): void {
     this.preloadImages();
     this.errorService.getCurrentSong().subscribe((value) => {
       this.currentSong = value;
     });
+    var audio = <HTMLAudioElement>document.getElementById("bgm");
+    if (audio != null) {
+      audio.volume = 0.1;
+    }
   }
 
 
@@ -66,14 +73,14 @@ export class HomePage implements OnInit {
     });
   }
 
-  getImage(): any{
+  getImage(): any {
 
     return {
       'background-image': this.levelatual === 0 ? 'url("../../../../../assets/imagens/background.jpeg")' :
-      this.levelatual === 1 ? 'url("../../../../../assets/imagens/level1.jpeg")' :
-      this.levelatual === 2 ? 'url("../../../../../assets/imagens/level2.jpeg")' :
-      this.levelatual === 3 ? 'url("../../../../../assets/imagens/level3.jpeg")' :
-      this.levelatual === 4 ? 'url("../../../../../assets/imagens/level4.jpeg")' : 'url("../../../../../assets/imagens/background.jpeg")',
+        this.levelatual === 1 ? 'url("../../../../../assets/imagens/level1.jpeg")' :
+          this.levelatual === 2 ? 'url("../../../../../assets/imagens/level2.jpeg")' :
+            this.levelatual === 3 ? 'url("../../../../../assets/imagens/level3.jpeg")' :
+              this.levelatual === 4 ? 'url("../../../../../assets/imagens/level4.jpeg")' : 'url("../../../../../assets/imagens/background.jpeg")',
       'transition': 'background-image 0.5s ease-in-out',
       'background-size': 'cover',
       'background-repeat': 'no-repeat'

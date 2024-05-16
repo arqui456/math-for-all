@@ -5,10 +5,14 @@ import { BasicService } from '../../services/basic.service';
   selector: 'app-initial',
   templateUrl: './initial.component.html',
   styleUrls: ['./initial.component.scss'],
+  providers: []
 })
 export class InitialComponent {
 
-  constructor(private errorService: BasicService) { }
+  constructor(
+    private errorService: BasicService
+  ) {
+  }
 
   data = [
     {
@@ -52,16 +56,16 @@ export class InitialComponent {
   public settings = false;
   @Output() levelEmitter = new EventEmitter<number>();
 
-  checkPlay(): void{
+  checkPlay(): void {
     this.errorService.passCurrentSong(this.currentSong);
     this.trigger += 1;
-    if (this.trigger == 2){
+    if (this.trigger == 2) {
       this.errorService.getPersonagem(this.displayUrl, this.displayName);
       this.levelEmitter.emit(this.trigger);
     }
   }
 
-  passCurrentSong(song: string) : void{
+  passCurrentSong(song: string): void {
     this.currentSong = song;
     this.errorService.passCurrentSong(song);
   }
