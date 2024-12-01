@@ -53,81 +53,81 @@ export class InitialComponent {
   data2 = [
     {
       url: '../assets/imagens/teste/34.png',
-      name: "Criança indígena"
+      name: "Criança cadeirante"
     },
     {
       url: '../assets/imagens/teste/36.png',
-      name: "Criança indígena"
+      name: "Criança cadeirante"
     },
     {
       url: '../assets/imagens/teste/38.png',
-      name: "Criança quilombola"
+      name: "Criança TEA"
     },
     {
       url: '../assets/imagens/teste/40.png',
-      name: "Criança quilombola"
+      name: "Criança TEA"
     },
     {
       url: '../assets/imagens/teste/42.png',
-      name: "Criança ribeirinha"
+      name: "Criança TDAH"
     },
     {
       url: '../assets/imagens/teste/44.png',
-      name: "Criança ribeirinha"
+      name: "Criança TDAH"
     },
     {
       url: '../assets/imagens/teste/46.png',
-      name: "Criança guerreira"
+      name: "Criança cega"
     },
     {
       url: '../assets/imagens/teste/48.png',
-      name: "Criança guerreira"
+      name: "Criança cega"
     },
     {
       url: '../assets/imagens/teste/50.png',
-      name: "Criança indígena"
+      name: "Criança com prótese"
     },
     {
       url: '../assets/imagens/teste/52.png',
-      name: "Criança indígena"
+      name: "Criança com prótese"
     },
     {
       url: '../assets/imagens/teste/54.png',
-      name: "Criança quilombola"
+      name: "Criança baixa visão"
     },
     {
       url: '../assets/imagens/teste/56.png',
-      name: "Criança quilombola"
+      name: "Criança baixa visão"
     },
     {
       url: '../assets/imagens/teste/58.png',
-      name: "Criança ribeirinha"
+      name: "Criança auditiva"
     },
     {
       url: '../assets/imagens/teste/60.png',
-      name: "Criança ribeirinha"
+      name: "Criança auditiva"
     },
     {
       url: '../assets/imagens/teste/62.png',
-      name: "Criança guerreira"
+      name: "Criança albina"
     },
     {
       url: '../assets/imagens/teste/64.png',
-      name: "Criança guerreira"
+      name: "Criança albina"
     },
     {
       url: '../assets/imagens/teste/66.png',
-      name: "Criança guerreira"
+      name: "Criança oculta"
     },
     {
       url: '../assets/imagens/teste/68.png',
-      name: "Criança guerreira"
+      name: "Criança oculta"
     }
   ];
   
 
   public trigger = 0;
-  public displayUrl = '../assets/imagens/crianca1.jpeg';
+  public displayUrl = '../assets/imagens/teste/14.png';
   public displayName = "Criança indígena";
   public currentSong = "../assets/imagens/musica1.mp3"
   public settings = false;

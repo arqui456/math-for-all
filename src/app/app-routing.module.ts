@@ -4,7 +4,8 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: 'home',
-    loadChildren: () => import('./feature/basic/basic.module').then( m => m.BasicModule)
+    redirectTo: 'home',
+
   },
   {
     path: '',
