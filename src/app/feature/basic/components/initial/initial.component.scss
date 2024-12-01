@@ -1,10 +1,33 @@
+.tituloscard{
+  font-size: 2rem;
+  font-family: 'DynaPuff';
+  color: #4981CD;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 10%;
+  height: 4vh;
+  background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(212,211,218,1) 100%);
+  text-align: center;
+  border-radius: 50px;
+}
+
+
 .grid {
   display: grid;
-  grid-template-columns: 27% 27% 27% 27%;
+  grid-template-columns: 50% 50%;
   text-align: center;
   grid-gap: 1px;
-  padding-left: 15%;
-  margin-top: 5%;
+}
+
+.first-column {
+  text-align: right; /* Align items in the first column */
+}
+
+.grid2{
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+  text-align: center;
+  grid-gap: 1px;
 }
 
 .sol{
@@ -69,7 +92,7 @@
   padding: 20px;
   text-align: center;
   width: 50%;
-  margin-top: 5%;
+  margin-top: 0;
   background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(212,211,218,1) 100%);
   border-radius: 100em/3em;
   margin-left: 25%;
@@ -86,16 +109,13 @@
 
 .personagemescolhido{
   padding: 10px;
-  position: fixed;
-  font-size: 2vw;
+  font-size: 1.5rem;
   font-family: 'DynaPuff';
   color: #4981CD;
-  width: 30%;
+  width: 50%;
   background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(212,211,218,1) 100%);
   text-align: center;
   border-radius: 50px;
-  margin-left: 64.5vw;
-  margin-top: 22.5vw;
 
 }
 .voltar{
@@ -112,6 +132,5 @@
 }
 
 .eng{
-  width: 70%;
   height: auto;
 }
