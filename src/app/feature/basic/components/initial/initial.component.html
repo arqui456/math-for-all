@@ -1,4 +1,4 @@
-<div *ngIf="!settings" style="display: flex; flex-direction: column; margin-top: 20px;">
+<div *ngIf="!settings" style="display: flex; flex-direction: column; margin-top: 20px; height: 100%;">
   <div class="titulo"*ngIf="trigger == 0">
       Matemática - Uma Aventura Alagoana 1
   </div>
@@ -6,24 +6,42 @@
       <div class = "titulopersonagemdiv">
           <span class = "titulopersonagem">Escolha seu personagem</span>
       </div>
-      <div class="row">
-          <div class="grid col-md-7">
-              <div *ngFor="let image of data">
-                  <img class = "btn sol" [src]="image.url" (click)="displayUrl = image.url ; displayName = image.name">
+      <div style="text-align: center; padding-right: 15vw;">
+          <div style="display:flex; justify-content:space-evenly">
+              <div class="tituloscard">
+                  Etnia
+              </div>
+              <div class="tituloscard" >
+                  PCD
               </div>
           </div>
-          <div style="padding-right: 10%; margin-top: 0%;" class="displaydiv col-md-5">
-              <img class = "displayimg" [src] = "displayUrl">
+      </div>
+      <div class="row">
+          <div class="grid col-md-5">
+              <div *ngFor="let image of data; let i = index"  [class.first-column]="i % 2 === 0">
+                  <img class = "btn sol" style="width: 50%;" [src]="image.url" (click)="displayUrl = image.url ; displayName = image.name">
+              </div>
           </div>
-          <div class="personagemescolhido">{{displayName}}</div>
+          <div class="grid2 col-md-4">
+            <div *ngFor="let image of data2">
+                <img class = "btn sol" [src]="image.url" (click)="displayUrl = image.url ; displayName = image.name">
+            </div>
+          </div>
+          <div style=" margin-top: 0%; flex-direction: column;" class="displaydiv col-md-3">
+              <img class = "displayimg" [src] = "displayUrl">
+              <div class="personagemescolhido">{{displayName}}</div>
+          </div>
       </div>
   </div>
-  <div class="row">
-      <div style="position: absolute;bottom: 0; left: 0;" class="col-md-2">
+  <div 
+    class="row" 
+    [ngStyle]="trigger === 0 ? { height: '95vh', alignContent: 'flex-end' } : {}"
+    >
+        <div  class="displaydiv col-md-10">
+            <img class = "btn btnimg jogar" [src]="'../assets/imagens/jogar.png'" (click)="checkPlay()">
+        </div>
+      <div  class="col-md-2">
           <img class = "eng btn btnimg" [src]="'../assets/imagens/eng.png'" (click)="settings = true;">
-      </div>
-      <div style="position: absolute;bottom: 0; right: 8%;" class="displaydiv col-md-10">
-          <img class = "btn btnimg jogar" [src]="'../assets/imagens/jogar.png'" (click)="checkPlay()">
       </div>
   </div>
 </div>

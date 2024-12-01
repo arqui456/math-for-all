@@ -1,13 +1,27 @@
 <ion-content>
 
-<audio id="bgm" [src]="currentSong" autoplay loop>
-</audio>
-<div *ngIf="!isLoaded" class="spinner-overlay"><mat-spinner></mat-spinner> </div>
-<div class="body" *ngIf="isLoaded" [ngStyle]="getImage()" style="background-color: red;">
-    <div *ngIf="levelatual>=1" class = "title">Nível {{levelatual}}</div>
-    <app-initial *ngIf="levelatual == 0 ; else level" (levelEmitter)="levelatual = 1"></app-initial>
-    <ng-template #level><app-level-one (levelEmitter)="levelatual = $event"></app-level-one></ng-template>
-</div>
-
-
-</ion-content>
+    <audio id="bgm" [src]="currentSong" autoplay loop></audio>
+  
+    <!-- Video Intro -->
+    <div *ngIf="!isVideoFinished" class="video-overlay">
+      <video #introVideo [src]="introVideoSrc" autoplay muted playsinline (ended)="onVideoEnded()"></video>
+    </div>
+  
+    <!-- Video Background -->
+    <div *ngIf="levelatual === 0" class="background-video-overlay">
+      <video #backGroundVideo autoplay loop muted playsinline class="background-video" [src]="'../../../../../assets/imagens/backgroundvideo.mp4'"></video>
+    </div>
+  
+    <!-- Spinner Overlay -->
+    <div *ngIf="!isLoaded" class="spinner-overlay">
+      <mat-spinner></mat-spinner>
+    </div>
+  
+    <div class="body" *ngIf="isLoaded && isVideoFinished" [ngStyle]="getImage()" style="background-color: transparent;">
+      <div *ngIf="levelatual>=1" class="title">Nível {{levelatual}}</div>
+      <app-initial style="height: 100%; display: block;" *ngIf="levelatual == 0 ; else level" (levelEmitter)="levelatual = 1"></app-initial>
+      <ng-template #level><app-level-one (levelEmitter)="levelatual = $event"></app-level-one></ng-template>
+    </div>
+  
+  </ion-content>
+  

@@ -16,38 +16,115 @@ export class InitialComponent {
 
   data = [
     {
-      url: '../assets/imagens/crianca1.jpeg',
+      url: '../assets/imagens/teste/14.png',
       name: "Criança indígena"
     },
     {
-      url: '../assets/imagens/crianca2.jpeg',
+      url: '../assets/imagens/teste/16.png',
       name: "Criança indígena"
     },
     {
-      url: '../assets/imagens/crianca3.jpeg',
+      url: '../assets/imagens/teste/18.png',
       name: "Criança quilombola"
     },
     {
-      url: '../assets/imagens/crianca4.jpeg',
+      url: '../assets/imagens/teste/20.png',
       name: "Criança quilombola"
     },
     {
-      url: '../assets/imagens/crianca5.jpeg',
+      url: '../assets/imagens/teste/22.png',
       name: "Criança ribeirinha"
     },
     {
-      url: '../assets/imagens/crianca6.jpeg',
+      url: '../assets/imagens/teste/24.png',
       name: "Criança ribeirinha"
     },
     {
-      url: '../assets/imagens/crianca7.jpeg',
+      url: '../assets/imagens/teste/28.png',
       name: "Criança guerreira"
     },
     {
-      url: '../assets/imagens/crianca8.png',
+      url: '../assets/imagens/teste/30.png',
       name: "Criança guerreira"
     },
   ];
+  
+
+  data2 = [
+    {
+      url: '../assets/imagens/teste/34.png',
+      name: "Criança indígena"
+    },
+    {
+      url: '../assets/imagens/teste/36.png',
+      name: "Criança indígena"
+    },
+    {
+      url: '../assets/imagens/teste/38.png',
+      name: "Criança quilombola"
+    },
+    {
+      url: '../assets/imagens/teste/40.png',
+      name: "Criança quilombola"
+    },
+    {
+      url: '../assets/imagens/teste/42.png',
+      name: "Criança ribeirinha"
+    },
+    {
+      url: '../assets/imagens/teste/44.png',
+      name: "Criança ribeirinha"
+    },
+    {
+      url: '../assets/imagens/teste/46.png',
+      name: "Criança guerreira"
+    },
+    {
+      url: '../assets/imagens/teste/48.png',
+      name: "Criança guerreira"
+    },
+    {
+      url: '../assets/imagens/teste/50.png',
+      name: "Criança indígena"
+    },
+    {
+      url: '../assets/imagens/teste/52.png',
+      name: "Criança indígena"
+    },
+    {
+      url: '../assets/imagens/teste/54.png',
+      name: "Criança quilombola"
+    },
+    {
+      url: '../assets/imagens/teste/56.png',
+      name: "Criança quilombola"
+    },
+    {
+      url: '../assets/imagens/teste/58.png',
+      name: "Criança ribeirinha"
+    },
+    {
+      url: '../assets/imagens/teste/60.png',
+      name: "Criança ribeirinha"
+    },
+    {
+      url: '../assets/imagens/teste/62.png',
+      name: "Criança guerreira"
+    },
+    {
+      url: '../assets/imagens/teste/64.png',
+      name: "Criança guerreira"
+    },
+    {
+      url: '../assets/imagens/teste/66.png',
+      name: "Criança guerreira"
+    },
+    {
+      url: '../assets/imagens/teste/68.png',
+      name: "Criança guerreira"
+    }
+  ];
+  
 
   public trigger = 0;
   public displayUrl = '../assets/imagens/crianca1.jpeg';

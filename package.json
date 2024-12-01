@@ -31,10 +31,10 @@
     "@capacitor/screen-reader": "^5.0.8",
     "@capacitor/status-bar": "5.0.7",
     "@ionic/angular": "^7.0.0",
-    "@ionic/cli": "^7.2.0",
     "bootstrap": "^5.3.3",
     "ionicons": "^7.0.0",
     "rxjs": "~7.8.0",
+    "sharp": "^0.33.5",
     "speech-to-text": "^2.9.1",
     "tslib": "^2.3.0",
     "zone.js": "~0.14.2"
